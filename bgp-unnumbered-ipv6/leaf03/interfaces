@@ -10,11 +10,9 @@ iface eth0 inet dhcp
 # uplinks
 auto swp51
 iface swp51
-    address fd00::13/128
 
 auto swp52
 iface swp52
-    address fd00::13/128
 
 
 # bridge to hosts
