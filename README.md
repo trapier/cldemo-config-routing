@@ -1,6 +1,6 @@
 Demo Routing Configurations
 ===========================
-This Github repository contains the configuration files necessary for setting up Layer 3 routing on a CLOS topology using Cumulus Linux and Quagga on the [Reference Topology](http://github.com/cumulusnetworks/cldemo-vagrant). Eight protocols are included:
+This Github repository contains the configuration files necessary for setting up Layer 3 routing on a Clos topology using Cumulus Linux and Quagga on the [Reference Topology](http://github.com/cumulusnetworks/cldemo-vagrant). Eight protocols are included:
 
  * OSPF Numbered
  * OSPF Unnumbered
@@ -20,11 +20,13 @@ Quickstart: Run the demo
 
     git clone https://github.com/cumulusnetworks/cldemo-vagrant
     cd cldemo-vagrant
+    git checkout 2.5.x
     vagrant up oob-mgmt-server oob-mgmt-switch leaf01 leaf02 spine01 spine02 server01 server02
     vagrant ssh oob-mgmt-server
     sudo su - cumulus
     git clone https://github.com/cumulusnetworks/cldemo-config-routing
     cd cldemo-config-routing
+    git checkout 2.5.x
     sudo ln -s  /home/cumulus/cldemo-config-routing /var/www/cldemo-config-routing
     python pushconfig.py bgp-unnumbered leaf01,leaf02,spine01,spine02,server01,server02
     ssh server01
