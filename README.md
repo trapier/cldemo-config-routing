@@ -13,6 +13,8 @@ This Github repository contains the configuration files necessary for setting up
 
 The flatfiles in this repository will set up a Layer 3 routing fabric between the leafs and spines, and will configure a Layer 2 bridge on each leaf top-of-rack switch for the servers in that rack. Servers access other servers in the same rack with one hop across the leaf top-of-rack, and access servers in other racks via one of the spine switches. A helper script named `push-config.py` is available to quickly deploy the flatfiles to the devices in the network, but you could just as easily copy and paste them by hand or incorporate them into an automation tool instead.
 
+This demo and these configurations are written to be used with the [cldemo-vagrant](https://github.com/cumulusnetworks/cldemo-vagrant) reference topology.
+
 
 Quickstart: Run the demo
 ------------------------
