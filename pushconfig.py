@@ -28,7 +28,9 @@ def go(host, demo):
                      'sudo mv Quagga.conf /etc/quagga/Quagga.conf',
                      'sudo mv daemons /etc/quagga/daemons',
                      'sudo ifreload -a',
-                     'sudo systemctl restart quagga.service']
+                     '. /etc/lsb-release; test $(echo $DISTRIB_RELEASE |cut -d. -f1 ) -lt 3 \
+                        && sudo service quagga restart \
+                        || sudo systemctl restart quagga.service ']
     elif "spine" in host:
         commands =  ['sudo wget %s/%s/interfaces'%(url, host),
                      'sudo wget %s/%s/Quagga.conf'%(url, host),
@@ -37,7 +39,9 @@ def go(host, demo):
                      'sudo mv Quagga.conf /etc/quagga/Quagga.conf',
                      'sudo mv daemons /etc/quagga/daemons',
                      'sudo ifreload -a',
-                     'sudo systemctl restart quagga.service']
+                     '. /etc/lsb-release; test $(echo $DISTRIB_RELEASE |cut -d. -f1 ) -lt 3 \
+                        && sudo service quagga restart \
+                        || sudo systemctl restart quagga.service ']
     for line in commands:
         stdin, stdout, stderr = expect.exec_command(line, get_pty=True)
         stdout.channel.recv_exit_status()
