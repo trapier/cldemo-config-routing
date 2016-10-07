@@ -45,7 +45,7 @@ def go(host, demo):
     for line in commands:
         stdin, stdout, stderr = expect.exec_command(line, get_pty=True)
         stdout.channel.recv_exit_status()
-        print("%s: %s"%(host, line))
+        print("%s: %s"%(host, ' '.join(line.split())))
     expect.close()
 
 
