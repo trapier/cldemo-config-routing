@@ -57,7 +57,7 @@ To Clone the software (git must be installed already on your machine):
 
     git clone https://github.com/cumulusnetworks/cldemo-vagrant
     
-If git is not installed on your machine and you'd rather [download the code directly](https://github.com/CumulusNetworks/cldemo-vagrant/archive/master.zip) follow the link below and unzip the file once it has been downloaded.
+If git is not installed on your machine and you'd rather [download the code directly](https://github.com/CumulusNetworks/cldemo-vagrant/archive/master.zip) make sure to unzip the file once it has been downloaded.
 
 ### 3). Start the VMs
 After obtaining the software, move in to the directory containing the software.
