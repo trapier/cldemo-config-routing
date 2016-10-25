@@ -99,7 +99,7 @@ Note the keyword "bgp-unnumbered" in the command below; this can be replaced wit
 
 
     python pushconfig.py bgp-unnumbered leaf01,leaf02,spine01,spine02,server01,server02
-    
+
 ### 7). Experiment
 Login to server01 and ping server02.
 
