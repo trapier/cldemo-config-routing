@@ -97,8 +97,9 @@ Note the keyword "bgp-unnumbered" in the command below; this can be replaced wit
  * BGP Numbered with IPv6 --> "bgp-numbered-ipv6"
  * BGP Unnumbered with IPv6 --> "bgp-unnumbered-ipv6"
 
-
+```
     python pushconfig.py bgp-unnumbered leaf01,leaf02,spine01,spine02,server01,server02
+```
 
 ### 7). Experiment
 Login to server01 and ping server02.
