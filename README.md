@@ -88,6 +88,15 @@ After setting up the repo, you can now use `push-config.py` This script will log
 
 Note the keyword "bgp-unnumbered" in the command below; this can be replaced with whatever example configuration you would like to deploy (such as "ospf-unnumbered" or "ospf-numbered" ).
 
+ * OSPF Numbered --> "ospf-numbered"
+ * OSPF Unnumbered --> "ospf-unnumbered"
+ * BGP Numbered --> "bgp-numbered"
+ * BGP Unnumbered --> "bgp-unnumbered"
+ * OSPF Numbered with IPv6 --> "ospf-numbered-ipv6"
+ * OSPF Unnumbered with IPv6 --> "ospf-unnumbered-ipv6"
+ * BGP Numbered with IPv6 --> "bgp-numbered-ipv6"
+ * BGP Unnumbered with IPv6 --> "bgp-unnumbered-ipv6"
+
     python pushconfig.py bgp-unnumbered leaf01,leaf02,spine01,spine02,server01,server02
     
 ### 7). Experiment
