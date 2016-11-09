@@ -1,6 +1,6 @@
 Demo Routing Configurations
 ===========================
-This demo and these configurations are written to be used with the [cldemo-vagrant](https://github.com/cumulusnetworks/cldemo-vagrant) reference topology.
+This demo and these configurations are written to be used with the [cldemo-vagrant](https://github.com/cumulusnetworks/cldemo-vagrant) reference topology. Before running this demo, install [VirtualBox](https://www.virtualbox.org/wiki/Download_Old_Builds) and [Vagrant](https://releases.hashicorp.com/vagrant/). The currently supported versions of VirtualBox and Vagrant can be found on the [cldemo-vagrant](https://github.com/cumulusnetworks/cldemo-vagrant).
 
 The configuration files in this repository will be placed on the appropriate devices in order to set up the desired Routing Protocol between the leafs and spines, and will configure a Layer 2 bridge on each leaf top-of-rack switch for the servers in that rack. 
 
