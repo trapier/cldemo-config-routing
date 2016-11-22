@@ -81,7 +81,6 @@ Login to the "cumulus" user
 
     git clone https://github.com/cumulusnetworks/cldemo-config-routing
     cd cldemo-config-routing
-    sudo ln -s  /home/cumulus/cldemo-config-routing /var/www/cldemo-config-routing
 
 ### 6). Push Configuration Files to Devices
 After setting up the repo, you can now use `push-config.py` This script will log in to each device, download the configuration files, and reboot the device. [Click to learn more about the operation of the script](https://github.com/CumulusNetworks/cldemo-config-routing#using-the-helper-script)
@@ -128,9 +127,9 @@ Running the demo is easiest with two terminal windows open. One window will log 
 
 *In terminal 1*
 
-    ansible-playbook deploy-bgp-unnumbered.yml -i network
+    ansible-playbook deploy-bgp-unnumbered.yml -l network
     # wait and watch connectivity drop and then come back
-    ansible-playbook deploy-bgp-numbered.yml -i network
+    ansible-playbook deploy-bgp-numbered.yml -l network
     # again
     ansible-playbook deploy-bgp-numbered-ipv6.yml
     # this will reboot server01, so you'll need to log back in in terminal 2
@@ -164,7 +163,7 @@ Using a routing protocol such as BGP or OSPF means that as long as one spine is 
 
 *In terminal 1*
 
-    ansible-playbook deploy-bgp-numbered.yml -i spine
+    ansible-playbook deploy-bgp-numbered.yml -l spine
     # watch Terminal 2, and pings will return
 
 
