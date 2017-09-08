@@ -1,0 +1,30 @@
+---
+- hosts: all
+  become: yes
+  tasks:
+    - name: copy interfaces
+      copy: src=bgp-numbered-to-host/{{ansible_hostname}}/interfaces dest=/etc/network/
+    - name: copy Quagga daemons
+      copy: src=bgp-numbered-to-host/{{ansible_hostname}}/daemons dest=/etc/quagga/
+    - name: copy Quagga conf
+      copy: src=bgp-numbered-to-host/{{ansible_hostname}}/Quagga.conf dest=/etc/quagga/
+      ignore_errors: yes
+
+- hosts: network
+  become: yes
+  tasks:
+    - name: reload networking
+      command: ifreload -a
+    - name: reload quagga
+      service: name=quagga state=restarted
+
+- hosts: servers
+  become: yes
+  tasks:
+    - name: restarts servers with their new configuration
+      shell: sleep 1 && shutdown -r 0
+      async: 1
+      poll: 0
+      ignore_errors: true
+    - name: Wait for everything to come back up
+      local_action: wait_for port=22 host="{{ inventory_hostname }}" search_regex=OpenSSH delay=10

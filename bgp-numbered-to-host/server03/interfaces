@@ -1,0 +1,17 @@
+auto lo
+iface lo inet loopback
+
+auto lo:1
+iface lo:1 inet static
+    address 10.0.0.33/32
+
+auto eth0
+iface eth0 inet dhcp
+
+auto eth1
+iface eth1 inet static
+    address 172.16.3.103/24
+
+auto eth2
+iface eth2 inet static
+    address 172.16.4.103/24
