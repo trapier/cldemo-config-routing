@@ -2,8 +2,8 @@ auto lo
 iface lo inet loopback
     address 10.0.0.34/32
 
-auto lo:1
-iface lo:1 inet static
+auto lo
+iface lo inet static
     address 10.0.0.34/32
 
 auto eth0
